@@ -13,16 +13,16 @@ public class ArmstrongRange {
 	public static String getRange(int num1, int num2) {
 		String res = "";
 		for (int i = num1; i <= num2; i++) {
-			if (getArm(i) != 0) {
-				res += i+" ";
+			if (getArm(i)) {
+				res += i + " ";
 			}
 
 		}
 		return res;
 	}
 
-	public static int getArm(int num) {
-		int result = 0;
+	public static boolean getArm(int num) {
+		boolean b = false;
 		int temp = num;
 		int num2 = 0;
 
@@ -32,9 +32,9 @@ public class ArmstrongRange {
 			num2 = num2 + (a * a * a);
 		}
 		if (temp == num2) {
-			result = temp;
+			b = true;
 		}
-		return result;
+		return b;
 	}
 
 }

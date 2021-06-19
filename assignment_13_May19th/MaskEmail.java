@@ -13,12 +13,13 @@ public class MaskEmail {
 
 	static String getMaskEmail(String mail) {
 		StringBuffer mask = new StringBuffer(mail);
-
 		for (int i = 2; mask.charAt(i) != '@'; i++) {
+
 			mask.setCharAt(i, '*');
 		}
 
 		return mask.toString();
+
 	}
 
 }
